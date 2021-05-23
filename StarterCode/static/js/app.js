@@ -49,3 +49,18 @@ function buildCharts(sample) {
         var OTU_labels = result.otu_labels;
         var samplevalue = result.sample_values;
 
+ // create Barchart
+     
+ var barchart = [{
+    y: OTU_ids.slice(0,10).map(otu_ids=>`OTU ${otu_ids}`).reverse(),
+    x: samplevalue.slice(0,10).reverse(),
+    text: OTU_labels.slice(0,10).reverse(),
+    type: "bar",
+    orientation:"h"
+  }];
+
+  var barlayout = {
+      title : "Top 10 Bacteria Cultures Found"
+     }
+
+  Plotly.newPlot('bar',barchart,barlayout);
