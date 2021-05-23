@@ -85,7 +85,7 @@ Use otu_labels for the text values.
         marker: {
             size: samplevalue,
             color: OTU_ids,
-            colorscale: "burg"
+            colorscale: "fall"
         }
 
           
