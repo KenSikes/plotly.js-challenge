@@ -63,8 +63,16 @@ function buildCharts(sample) {
       title : "Top 10 Bacteria Cultures Found"
      }
      //plot bar chart
+
   Plotly.newPlot('bar',barchart,barlayout);
 
+ /* Create a bubble chart that displays each sample.
+Use otu_ids for the x values.
+Use sample_values for the y values.
+Use sample_values for the marker size.
+Use otu_ids for the marker colors.
+Use otu_labels for the text values.
+*/
      //Create Bubble chart
 
      var bubbledata = [{
