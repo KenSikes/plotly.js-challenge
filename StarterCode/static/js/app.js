@@ -32,6 +32,8 @@ function dropdown(){
     })
 }
 
+dropdown()
+
 /*Create a horizontal bar chart .
 Use sample_values as the values for the bar chart.
 Use otu_ids as the labels for the bar chart.
@@ -83,8 +85,17 @@ Use otu_labels for the text values.
         marker: {
             size: samplevalue,
             color: OTU_ids,
-            colorscale: "Earth"
+            colorscale: "burg"
         }
 
           
       }];
+
+      var bubblelayout = {
+        title : "Bacteria Culture Per Sample",
+        xaxis: {
+            title:"OTU ID"}
+    }
+//plot bubble chart
+    Plotly.newPlot('bubble',bubbledata,bubblelayout)
+});}
