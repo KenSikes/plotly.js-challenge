@@ -49,7 +49,7 @@ function buildCharts(sample) {
         var OTU_labels = result.otu_labels;
         var samplevalue = result.sample_values;
 
- // create Barchart
+ // create Bar chart
      
  var barchart = [{
     y: OTU_ids.slice(0,10).map(otu_ids=>`OTU ${otu_ids}`).reverse(),
@@ -62,5 +62,21 @@ function buildCharts(sample) {
   var barlayout = {
       title : "Top 10 Bacteria Cultures Found"
      }
-
+     //plot bar chart
   Plotly.newPlot('bar',barchart,barlayout);
+
+     //Create Bubble chart
+
+     var bubbledata = [{
+        x: OTU_ids, 
+        y: samplevalue,
+        text: OTU_labels,
+        mode:"markers",
+        marker: {
+            size: samplevalue,
+            color: OTU_ids,
+            colorscale: "Earth"
+        }
+
+          
+      }];
